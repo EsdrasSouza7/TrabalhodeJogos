@@ -23,12 +23,12 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
 		if(is_on_floor()):
@@ -42,19 +42,19 @@ func _physics_process(delta):
 			get_node("manage/idle").visible = true
 			get_node("manage/AnimationPlayer").play("idle")
 
-	if(not is_on_floor()):
+	if(Input.is_action_just_pressed("jump") and is_on_floor()):
 		clearSprites()
 		get_node("manage/jump").visible = true
 		get_node("manage/AnimationPlayer").play("jump")
 	
-	if(Input.is_action_pressed("ui_left")):
+	if(Input.is_action_pressed("left")):
 		get_node("manage/idle").set_flip_h(true)
 		get_node("manage/walk").set_flip_h(true)
 		get_node("manage/jump").set_flip_h(true)
 		get_node("manage/run").set_flip_h(true)
 		get_node("manage/death").set_flip_h(true)
 		get_node("manage/hurt").set_flip_h(true)
-	elif(Input.is_action_pressed("ui_right")):
+	elif(Input.is_action_pressed("right")):
 		get_node("manage/idle").set_flip_h(false)
 		get_node("manage/walk").set_flip_h(false)
 		get_node("manage/jump").set_flip_h(false)
