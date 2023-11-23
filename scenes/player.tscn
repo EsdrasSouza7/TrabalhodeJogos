@@ -242,9 +242,5 @@ hframes = 8
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_callback = 0
-limit_left = -640
-limit_top = -320
-limit_right = 640
-limit_bottom = 320
 position_smoothing_enabled = true
 editor_draw_limits = true
