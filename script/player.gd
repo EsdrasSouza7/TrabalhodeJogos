@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
 
-const SPEED = 140.0
-const JUMP_VELOCITY = -300.0
+const SPEED: float = 140.0
+const SPEED_RUN: float = 210.0 
+const JUMP_VELOCITY: float = -300.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-const anim = ["idle", "walk", "run", "jump", "hurt", "death"]
+var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
+const anim: Array = ["idle", "walk", "run", "jump", "hurt", "death"]
 
 func clearSprites():
 	for i in range(len(anim)):
@@ -29,7 +30,13 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
-	if direction:
+	if direction and Input.is_action_pressed("run"):
+		velocity.x = direction * SPEED_RUN
+		if(is_on_floor()):
+			clearSprites()
+			get_node("manage/run").visible = true
+			get_node("manage/AnimationPlayer").play("run")
+	elif direction:
 		velocity.x = direction * SPEED
 		if(is_on_floor()):
 			clearSprites()
@@ -41,6 +48,8 @@ func _physics_process(delta):
 			clearSprites()
 			get_node("manage/idle").visible = true
 			get_node("manage/AnimationPlayer").play("idle")
+			
+	
 
 	if(Input.is_action_just_pressed("jump") and is_on_floor()):
 		clearSprites()

@@ -17,4 +17,4 @@ shape = SubResource("RectangleShape2D_6fxwp")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_50cfg")]
-position = Vector2(66, -31)
+position = Vector2(77, 102)
