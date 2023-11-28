@@ -72,3 +72,4 @@ func _physics_process(delta):
 		get_node("manage/hurt").set_flip_h(false)	
 	
 	move_and_slide()
+	
