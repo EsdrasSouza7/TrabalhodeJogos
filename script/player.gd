@@ -16,6 +16,8 @@ var is_alive : bool = true
 func clearSprites():
 	for i in range(len(anim)):
 		get_node("manage/"+anim[i]).visible = false
+		get_node("Camera2D/GamerOver").visible = false
+		
 
 func _ready():
 	clearSprites()
@@ -78,21 +80,25 @@ func _process(delta: float) -> void:
 			
 		move_and_slide()
 	else: 
+		
 		# Reduza a escala da câmera para criar um efeito de zoom
-		%Camera2D.zoom += Vector2(death_zoom_speed, death_zoom_speed)
+		#%Camera2D.zoom += Vector2(death_zoom_speed, death_zoom_speed)
 		# Limite o zoom máximo
-		%Camera2D.zoom.x = min(max_zoom, %Camera2D.zoom.x)
-		%Camera2D.zoom.y = min(max_zoom, %Camera2D.zoom.y)
+		#%Camera2D.zoom.x = min(max_zoom, %Camera2D.zoom.x)
+		#%Camera2D.zoom.y = min(max_zoom, %Camera2D.zoom.y)
+		pass
 
 
-func stop_player_animation() -> void:
+func death_player_animation() -> void:
 	is_alive = false
 	clearSprites()
 	get_node("manage/death").visible = true
 	get_node("manage/AnimationPlayer").play("death")
+	get_node("Camera2D/GamerOver").visible = true
 	
 func reset_character():
 	is_alive = true
+	
 	# Adicione aqui a lógica para reiniciar o personagem
 	# ...
 
