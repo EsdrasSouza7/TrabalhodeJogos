@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dulw7pnv2rnbl"]
+[gd_scene load_steps=19 format=3 uid="uid://dulw7pnv2rnbl"]
 
 [ext_resource type="Texture2D" uid="uid://dmhnc4j6cjha5" path="res://player/Dude_Monster/Dude_Monster_Idle_4.png" id="1_agor8"]
 [ext_resource type="Script" path="res://script/player.gd" id="1_ncxtj"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dcrpf5wn8w8ue" path="res://player/Dude_Monster/Dude_Monster_Hurt_4.png" id="5_v5flr"]
 [ext_resource type="Texture2D" uid="uid://ber8fbvga5aws" path="res://player/Dude_Monster/Dude_Monster_Death_8.png" id="6_0th2q"]
 [ext_resource type="Script" path="res://script/Camera2D.gd" id="8_ivv8o"]
+[ext_resource type="PackedScene" uid="uid://ddtlftydyc5mh" path="res://scenes/gameover.tscn" id="9_lmw8f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5xe1t"]
 radius = 11.0
@@ -197,8 +198,8 @@ _data = {
 "walk": SubResource("Animation_g5rid")
 }
 
-[node name="player" type="CharacterBody2D"]
-position = Vector2(174, 119)
+[node name="player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(63, 31)
 script = ExtResource("1_ncxtj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -242,9 +243,13 @@ texture = ExtResource("6_0th2q")
 hframes = 8
 
 [node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-6, -1)
 process_callback = 0
 limit_left = 0
 position_smoothing_enabled = true
-position_smoothing_speed = 10.0
 editor_draw_limits = true
 script = ExtResource("8_ivv8o")
+
+[node name="GamerOver" parent="Camera2D" instance=ExtResource("9_lmw8f")]
+position = Vector2(-321, -162)
