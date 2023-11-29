@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccj16r6d8eru8"]
+
+[ext_resource type="Script" path="res://script/InfiniteScrollingBackground.gd" id="1_qrimp"]
+[ext_resource type="Texture2D" uid="uid://dfp3nnkaxf1uk" path="res://assets/Sunny-land-files/Graphical Assets/environment/Background/back.png" id="2_10j7p"]
+
+[node name="InfiniteScrollingBackground" type="ParallaxBackground"]
+script = ExtResource("1_qrimp")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("2_10j7p")
+centered = false

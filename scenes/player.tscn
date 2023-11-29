@@ -198,7 +198,7 @@ _data = {
 }
 
 [node name="player" type="CharacterBody2D"]
-position = Vector2(63, 31)
+position = Vector2(174, 119)
 script = ExtResource("1_ncxtj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -245,5 +245,6 @@ hframes = 8
 process_callback = 0
 limit_left = 0
 position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 editor_draw_limits = true
 script = ExtResource("8_ivv8o")
