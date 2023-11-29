@@ -862,7 +862,7 @@ sources/1 = SubResource("TileSetAtlasSource_sp0fy")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_sw78i"]
 
-[node name="mapa1" type="Node2D"]
+[node name="mapa2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(10, 0)

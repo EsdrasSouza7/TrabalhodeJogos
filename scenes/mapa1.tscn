@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bg1733bj2v347"]
+[gd_scene load_steps=15 format=3 uid="uid://bg1733bj2v347"]
 
 [ext_resource type="Texture2D" uid="uid://tooapmuqcfvo" path="res://assets/Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_nwjvm"]
 [ext_resource type="PackedScene" uid="uid://dulw7pnv2rnbl" path="res://scenes/player.tscn" id="2_d35vk"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://qg2f40mf2tnj" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/spike-skull.png" id="9_kqhlm"]
 [ext_resource type="Texture2D" uid="uid://biueul810n0cc" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/palm.png" id="10_rd5k4"]
 [ext_resource type="PackedScene" uid="uid://cqpxpx52g6lg7" path="res://scenes/spike.tscn" id="11_fixgw"]
+[ext_resource type="PackedScene" uid="uid://b5m344kr8u2um" path="res://scenes/goal.tscn" id="12_iayce"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_868dg"]
 texture = ExtResource("1_nwjvm")
@@ -583,8 +584,8 @@ z_index = -1
 position = Vector2(314, 40)
 texture = ExtResource("10_rd5k4")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_d35vk")]
-position = Vector2(167, 36)
+[node name="player" parent="." instance=ExtResource("2_d35vk")]
+position = Vector2(163, 107)
 
 [node name="spike" parent="." instance=ExtResource("11_fixgw")]
 position = Vector2(1211, 213)
@@ -757,3 +758,6 @@ scale = Vector2(1.53035, 1.59196)
 [node name="spike56" parent="." instance=ExtResource("11_fixgw")]
 position = Vector2(2484, 212)
 scale = Vector2(1.53035, 1.59196)
+
+[node name="goal" parent="." instance=ExtResource("12_iayce")]
+position = Vector2(2291, 68)
