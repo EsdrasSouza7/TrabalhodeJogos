@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bg1733bj2v347"]
+[gd_scene load_steps=15 format=3 uid="uid://bg1733bj2v347"]
 
 [ext_resource type="Texture2D" uid="uid://tooapmuqcfvo" path="res://assets/Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_nwjvm"]
 [ext_resource type="PackedScene" uid="uid://dulw7pnv2rnbl" path="res://scenes/player.tscn" id="2_d35vk"]
@@ -6,10 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://clc1lucsxva5m" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/straw-house.png" id="4_llqqg"]
 [ext_resource type="Texture2D" uid="uid://dao525kuygxbf" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/shrooms.png" id="7_8uspc"]
 [ext_resource type="Texture2D" uid="uid://cui4w66u61nbg" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/skulls.png" id="8_5227b"]
-[ext_resource type="Texture2D" uid="uid://i8f3igftdnds" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/door.png" id="8_i21um"]
 [ext_resource type="Texture2D" uid="uid://qg2f40mf2tnj" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/spike-skull.png" id="9_kqhlm"]
 [ext_resource type="Texture2D" uid="uid://biueul810n0cc" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/palm.png" id="10_rd5k4"]
+[ext_resource type="PackedScene" uid="uid://cgq1ndhguofst" path="res://scenes/infinite_scrolling_background.tscn" id="11_7b6vc"]
 [ext_resource type="PackedScene" uid="uid://cqpxpx52g6lg7" path="res://scenes/spike.tscn" id="11_fixgw"]
+[ext_resource type="AudioStream" uid="uid://sijg1euuoimm" path="res://assets/Music by Ansimuz/happywalking.ogg" id="12_gp7mt"]
 [ext_resource type="PackedScene" uid="uid://b5m344kr8u2um" path="res://scenes/goal.tscn" id="12_iayce"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_868dg"]
@@ -492,7 +493,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_868dg")
 
 [node name="mapa1" type="Node2D"]
-position = Vector2(-110, 44)
+position = Vector2(-109, -67)
 
 [node name="TileMap2" type="TileMap" parent="."]
 position = Vector2(109, 4)
@@ -511,7 +512,7 @@ texture = ExtResource("10_rd5k4")
 
 [node name="Straw-house" type="Sprite2D" parent="TileMap2"]
 z_index = -1
-position = Vector2(76, 77)
+position = Vector2(86, 77)
 texture = ExtResource("4_llqqg")
 
 [node name="Shrooms" type="Sprite2D" parent="TileMap2"]
@@ -558,12 +559,8 @@ z_index = -1
 position = Vector2(314, 40)
 texture = ExtResource("10_rd5k4")
 
-[node name="Door" type="Sprite2D" parent="TileMap2"]
-position = Vector2(2182, 48)
-texture = ExtResource("8_i21um")
-
 [node name="player" parent="." instance=ExtResource("2_d35vk")]
-position = Vector2(172, 109)
+position = Vector2(163, 107)
 
 [node name="spike" parent="." instance=ExtResource("11_fixgw")]
 position = Vector2(1211, 213)
@@ -739,4 +736,11 @@ scale = Vector2(1.53035, 1.59196)
 
 [node name="goal" parent="." instance=ExtResource("12_iayce")]
 position = Vector2(2291, 68)
-scale = Vector2(0.530717, 0.210459)
+
+[node name="InfiniteScrollingBackground" parent="." instance=ExtResource("11_7b6vc")]
+speed = 5.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_gp7mt")
+volume_db = 15.0
+autoplay = true

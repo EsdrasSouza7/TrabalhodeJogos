@@ -1,7 +1,11 @@
-[gd_scene format=3 uid="uid://ddtlftydyc5mh"]
+[gd_scene load_steps=2 format=3 uid="uid://ddtlftydyc5mh"]
 
-[node name="finish" type="Node2D"]
+[ext_resource type="Script" path="res://script/gameover.gd" id="1_5u7ob"]
+
+[node name="GamerOver" type="Node2D"]
+z_index = 2
 position = Vector2(1, 0)
+script = ExtResource("1_5u7ob")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -14,7 +18,7 @@ scale = Vector2(16.0237, 8.07034)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(0, 0, 0, 0.364706)
+color = Color(0, 0, 0, 0.647059)
 
 [node name="Button" type="Button" parent="."]
 offset_left = 104.0
@@ -38,3 +42,5 @@ offset_bottom = 128.0
 scale = Vector2(1.65898, 1.37983)
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "Gamer Over"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
