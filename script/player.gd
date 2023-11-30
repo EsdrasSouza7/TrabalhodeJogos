@@ -6,11 +6,14 @@ const SPEED_RUN: float = 210.0
 const JUMP_VELOCITY: float = -300.0
 var death_zoom_speed = 0.01
 var max_zoom = 5.0
+var pause = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 const anim: Array = ["idle", "walk", "run", "jump", "hurt", "death"]
 
+var interface_scene: CanvasLayer
+var canvas_layer : CanvasLayer
 var is_alive : bool = true
 
 func clearSprites():
@@ -18,11 +21,20 @@ func clearSprites():
 		get_node("manage/"+anim[i]).visible = false
 		get_node("Camera2D/GamerOver").visible = false
 		
-
 func _ready():
+	
 	clearSprites()
 	get_node("manage/idle").visible = true
 	get_node("manage/AnimationPlayer").play("idle")
+	#interface_scene = preload("res://scenes/Pause.tscn").instantiate()
+	#$CanvasLayer.add_child(interface_scene)
+	#interface_scene.rect_position = Vector2(-1000, -1000)
+	# Instanciar a cena da interface
+	canvas_layer = preload("res://scenes/Pause.tscn").instantiate(PackedScene.GEN_EDIT_STATE_MAIN)
+	# Adicionar o CanvasLayer à cena principal
+	$CanvasLayer.add_child(canvas_layer)
+	# Definir a posição inicial (pode ser ajustada conforme necessário)
+	canvas_layer.rect_position = Vector2(-1000, -1000)
 
 func _process(delta: float) -> void:
 	if is_alive:
@@ -56,7 +68,13 @@ func _process(delta: float) -> void:
 				get_node("manage/idle").visible = true
 				get_node("manage/AnimationPlayer").play("idle")
 				
-		
+		if(Input.is_action_just_pressed("pause")) and pause == 0:
+			interface_scene.rect_position = Vector2(0, 0)
+			pause = 1
+			
+		elif(Input.is_action_just_pressed("pause")) and pause == 1:
+			interface_scene.rect_position = Vector2(1000, 1000)
+			pause = 0
 
 		if(Input.is_action_just_pressed("jump") and is_on_floor()):
 			clearSprites()
@@ -96,12 +114,7 @@ func death_player_animation() -> void:
 	get_node("manage/AnimationPlayer").play("death")
 	get_node("Camera2D/GamerOver").visible = true
 	
-func reset_character():
-	is_alive = true
-	
-	# Adicione aqui a lógica para reiniciar o personagem
-	# ...
 
-	# Reinicie a escala da câmera
-	get_tree().get_root().get_node("Camera2D").reset_zoom()
+
+
 
