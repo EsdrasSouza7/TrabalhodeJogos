@@ -8,7 +8,7 @@ script = ExtResource("1_qrimp")
 speed = 50.0
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-motion_mirroring = Vector2(640, 0)
+motion_mirroring = Vector2(650, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
 position = Vector2(323, -68)
