@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb7vie5q3qnvg"]
+
+[ext_resource type="Script" path="res://script/InfiniteScrollingBackground.gd" id="1_ml6lo"]
+[ext_resource type="Texture2D" uid="uid://dfp3nnkaxf1uk" path="res://assets/Sunny-land-files/Graphical Assets/environment/Background/back.png" id="2_si7co"]
+[ext_resource type="Texture2D" uid="uid://bh8o4nn5bbvpx" path="res://assets/Sunny-land-files/Graphical Assets/environment/Background/middle.png" id="3_s1n38"]
+
+[node name="ParalaxDaTelaInicial" type="ParallaxBackground"]
+script = ExtResource("1_ml6lo")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(643, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(320, 163)
+scale = Vector2(1.67496, 1.35792)
+texture = ExtResource("2_si7co")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(643, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(86, 361)
+texture = ExtResource("3_s1n38")
+flip_h = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(262, 361)
+texture = ExtResource("3_s1n38")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(438, 361)
+texture = ExtResource("3_s1n38")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(553, 361)
+texture = ExtResource("3_s1n38")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(360, 361)
+texture = ExtResource("3_s1n38")
+flip_h = true
+
+[node name="Sprite2D7" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(168, 359)
+texture = ExtResource("3_s1n38")
+flip_h = true
+
+[node name="Sprite2D8" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(600, 361)
+texture = ExtResource("3_s1n38")
+hframes = 2
+
+[node name="Sprite2D9" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(42, 361)
+texture = ExtResource("3_s1n38")
+hframes = 2
+frame = 1
