@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://cjva11toypva4"]
+[gd_scene load_steps=23 format=3 uid="uid://cjva11toypva4"]
 
+[ext_resource type="Script" path="res://script/mapa2.gd" id="1_fqoh8"]
 [ext_resource type="Texture2D" uid="uid://tooapmuqcfvo" path="res://assets/Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_odcxo"]
 [ext_resource type="PackedScene" uid="uid://dulw7pnv2rnbl" path="res://scenes/player.tscn" id="2_dbakk"]
 [ext_resource type="Texture2D" uid="uid://tkvjlnr1fqcb" path="res://assets/Sunny-land-files/Graphical Assets/environment/Background/props.png" id="2_iy841"]
@@ -14,7 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://b3sscxlemh0sb" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/tree.png" id="11_tnel5"]
 [ext_resource type="Texture2D" uid="uid://bbanbuyj8bcto" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/tree-house.png" id="12_enen7"]
 [ext_resource type="Texture2D" uid="uid://cxhkt2hkkhu6y" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/plant-house.png" id="13_hmb6r"]
+[ext_resource type="PackedScene" uid="uid://dlpaxtht82ejy" path="res://scenes/macunaima.tscn" id="14_nfwqy"]
 [ext_resource type="PackedScene" uid="uid://cgq1ndhguofst" path="res://scenes/infinite_scrolling_background.tscn" id="15_rrlpo"]
+[ext_resource type="Script" path="res://script/Livro2.gd" id="15_ymkr5"]
 [ext_resource type="AudioStream" uid="uid://tjn4kpsc6ps2" path="res://assets/Music by Ansimuz/summer nights.ogg" id="16_01ikg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j27ko"]
@@ -862,9 +865,8 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_j27ko")
 sources/1 = SubResource("TileSetAtlasSource_sp0fy")
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_sw78i"]
-
 [node name="mapa2" type="Node2D"]
+script = ExtResource("1_fqoh8")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(10, 0)
@@ -1106,25 +1108,21 @@ texture = ExtResource("13_hmb6r")
 position = Vector2(1018, -73)
 texture = ExtResource("10_bqvks")
 
+[node name="macunaima" parent="." instance=ExtResource("14_nfwqy")]
+position = Vector2(1978, -80)
+
+[node name="Control" type="Control" parent="macunaima"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -320.0
+offset_top = -157.0
+offset_right = -189.0
+offset_bottom = -109.0
+script = ExtResource("15_ymkr5")
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_dbakk")]
-position = Vector2(37, 104)
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
-position = Vector2(856, -67)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
-position = Vector2(-42, 430)
-scale = Vector2(908.058, 4.80619)
-shape = SubResource("SegmentShape2D_sw78i")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
-light_mask = 7
-visibility_layer = 7
-position = Vector2(-895, -190)
-scale = Vector2(-21.3564, 117.516)
-shape = SubResource("SegmentShape2D_sw78i")
+position = Vector2(1898, -86)
 
 [node name="InfiniteScrollingBackground" parent="." instance=ExtResource("15_rrlpo")]
 speed = 5.0
@@ -1133,3 +1131,5 @@ speed = 5.0
 stream = ExtResource("16_01ikg")
 volume_db = 15.0
 autoplay = true
+
+[connection signal="body_entered" from="macunaima" to="." method="_on_macunaima_body_entered"]
