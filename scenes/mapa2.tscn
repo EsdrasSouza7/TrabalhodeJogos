@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cjva11toypva4"]
+[gd_scene load_steps=25 format=3 uid="uid://cjva11toypva4"]
 
 [ext_resource type="Script" path="res://script/mapa2.gd" id="1_fqoh8"]
 [ext_resource type="Texture2D" uid="uid://tooapmuqcfvo" path="res://assets/Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_odcxo"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://cgq1ndhguofst" path="res://scenes/infinite_scrolling_background.tscn" id="15_rrlpo"]
 [ext_resource type="Script" path="res://script/Livro2.gd" id="15_ymkr5"]
 [ext_resource type="AudioStream" uid="uid://tjn4kpsc6ps2" path="res://assets/Music by Ansimuz/summer nights.ogg" id="16_01ikg"]
+[ext_resource type="PackedScene" uid="uid://dqcmy7t0tthna" path="res://scenes/o_cortico.tscn" id="17_3fj0p"]
+[ext_resource type="Script" path="res://script/Livro3.gd" id="18_kx12u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j27ko"]
 texture = ExtResource("1_odcxo")
@@ -1111,7 +1113,7 @@ texture = ExtResource("10_bqvks")
 [node name="macunaima" parent="." instance=ExtResource("14_nfwqy")]
 position = Vector2(1978, -80)
 
-[node name="Control" type="Control" parent="macunaima"]
+[node name="Livro2" type="Control" parent="macunaima"]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
@@ -1120,6 +1122,18 @@ offset_top = -157.0
 offset_right = -189.0
 offset_bottom = -109.0
 script = ExtResource("15_ymkr5")
+
+[node name="o_cortico" parent="." instance=ExtResource("17_3fj0p")]
+position = Vector2(3266, -79)
+
+[node name="Livro3" type="Control" parent="o_cortico"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -115.0
+offset_top = -125.0
+offset_right = -75.0
+offset_bottom = -85.0
+script = ExtResource("18_kx12u")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_dbakk")]
 position = Vector2(1898, -86)
@@ -1133,3 +1147,4 @@ volume_db = 15.0
 autoplay = true
 
 [connection signal="body_entered" from="macunaima" to="." method="_on_macunaima_body_entered"]
+[connection signal="body_entered" from="o_cortico" to="." method="_on_o_cortico_body_entered"]
