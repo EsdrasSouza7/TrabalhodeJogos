@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cui4w66u61nbg" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/skulls.png" id="8_5227b"]
 [ext_resource type="PackedScene" uid="uid://dvl6e7p6u8mxx" path="res://scenes/dom_casmurro.tscn" id="9_7y31f"]
 [ext_resource type="Texture2D" uid="uid://qg2f40mf2tnj" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/spike-skull.png" id="9_kqhlm"]
-[ext_resource type="Script" path="res://script/Livro1.gd" id="10_ci6r4"]
+[ext_resource type="Texture2D" uid="uid://i8f3igftdnds" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/door.png" id="9_yn3bk"]
 [ext_resource type="Texture2D" uid="uid://biueul810n0cc" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/palm.png" id="10_rd5k4"]
 [ext_resource type="PackedScene" uid="uid://cgq1ndhguofst" path="res://scenes/infinite_scrolling_background.tscn" id="11_7b6vc"]
 [ext_resource type="PackedScene" uid="uid://cqpxpx52g6lg7" path="res://scenes/spike.tscn" id="11_fixgw"]
@@ -496,7 +496,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_868dg")
 
 [node name="mapa1" type="Node2D"]
-position = Vector2(-109, -67)
+position = Vector2(-113, -67)
 script = ExtResource("1_d7wuw")
 
 [node name="TileMap2" type="TileMap" parent="."]
@@ -563,18 +563,20 @@ z_index = -1
 position = Vector2(314, 40)
 texture = ExtResource("10_rd5k4")
 
+[node name="Door" type="Sprite2D" parent="TileMap2"]
+position = Vector2(2181, 48)
+texture = ExtResource("9_yn3bk")
+
 [node name="player" parent="." instance=ExtResource("2_d35vk")]
 position = Vector2(189, 112)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="player"]
+position = Vector2(68, 7)
+stream = ExtResource("12_gp7mt")
+autoplay = true
+
 [node name="dom_casmurro" parent="." instance=ExtResource("9_7y31f")]
 position = Vector2(890, 115)
-
-[node name="Livro1" type="Control" parent="dom_casmurro"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("10_ci6r4")
 
 [node name="spike" parent="." instance=ExtResource("11_fixgw")]
 position = Vector2(1211, 213)
@@ -582,189 +584,140 @@ scale = Vector2(1.53035, 1.59196)
 
 [node name="spike4" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(16.3361, 0)
-scale = Vector2(1, 1)
 
 [node name="spike5" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(32.6722, 0)
-scale = Vector2(1, 1)
 
 [node name="spike6" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(49.0084, 0)
-scale = Vector2(1, 1)
 
 [node name="spike7" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(65.3445, 0)
-scale = Vector2(1, 1)
 
 [node name="spike8" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(81.0272, 0)
-scale = Vector2(1, 1)
 
 [node name="spike9" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(96.7099, 0)
-scale = Vector2(1, 1)
 
 [node name="spike10" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(113.046, 0)
-scale = Vector2(1, 1)
 
 [node name="spike11" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(129.382, 0)
-scale = Vector2(1, 1)
 
 [node name="spike12" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(145.718, 0)
-scale = Vector2(1, 1)
 
 [node name="spike13" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(162.054, 0)
-scale = Vector2(1, 1)
 
 [node name="spike16" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(210.409, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike33" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(250.923, -79.7759)
-scale = Vector2(1, 1)
 
 [node name="spike34" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(323.455, -79.1477)
-scale = Vector2(1, 1)
 
 [node name="spike35" parent="spike" instance=ExtResource("11_fixgw")]
-position = Vector2(411.671, -79.7759)
-scale = Vector2(1, 1)
+position = Vector2(412.324, -79.7759)
 
 [node name="spike22" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(305.159, 0)
-scale = Vector2(1, 1)
 
 [node name="spike25" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(353.514, 0)
-scale = Vector2(1, 1)
 
 [node name="spike26" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(369.85, 0)
-scale = Vector2(1, 1)
 
 [node name="spike27" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(380.305, 0)
-scale = Vector2(1, 1)
 
 [node name="spike30" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(429.313, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike31" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(447.61, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike32" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(465.906, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike36" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(535.825, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike37" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(552.161, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike38" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(568.497, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike39" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(584.18, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike40" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(600.516, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike41" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(616.852, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike42" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(522.756, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike43" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(483.549, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike44" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(633.842, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike45" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(650.178, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike46" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(667.168, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike47" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(683.504, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike48" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(700.493, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike49" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(716.829, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike50" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(733.166, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike51" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(749.502, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike52" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(765.838, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike53" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(782.174, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike54" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(799.163, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike55" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(815.5, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike56" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(831.836, -0.628159)
-scale = Vector2(1, 1)
 
 [node name="spike57" parent="spike" instance=ExtResource("11_fixgw")]
-position = Vector2(565.23, -103.018)
-scale = Vector2(1, 1)
+position = Vector2(565.23, -100.505)
 
 [node name="spike58" parent="spike" instance=ExtResource("11_fixgw")]
 position = Vector2(763.224, -160.808)
-scale = Vector2(1, 1)
 
 [node name="goal" parent="." instance=ExtResource("12_iayce")]
 position = Vector2(2291, 68)
 
 [node name="InfiniteScrollingBackground" parent="." instance=ExtResource("11_7b6vc")]
 speed = 5.0
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_gp7mt")
-volume_db = 15.0
-autoplay = true
 
 [connection signal="body_entered" from="dom_casmurro" to="." method="_on_dom_casmurro_body_entered"]
