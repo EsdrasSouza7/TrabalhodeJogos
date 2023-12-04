@@ -33,7 +33,7 @@ func _on_dom_casmurro_body_entered(_body):
 	if ColetaLivro == 0:
 		var player = get_node("player")
 		var livro = get_node("dom_casmurro")
-		overlay_scene_instance.position = Vector2i(575, -45)
+		overlay_scene_instance.position = Vector2i(585, -45)
 		show_overlay()
 		player.Stop_Player()
 		livro.queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cjva11toypva4"]
+[gd_scene load_steps=27 format=3 uid="uid://cjva11toypva4"]
 
 [ext_resource type="Script" path="res://script/mapa2.gd" id="1_fqoh8"]
 [ext_resource type="Texture2D" uid="uid://tooapmuqcfvo" path="res://assets/Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_odcxo"]
@@ -21,6 +21,8 @@
 [ext_resource type="AudioStream" uid="uid://tjn4kpsc6ps2" path="res://assets/Music by Ansimuz/summer nights.ogg" id="16_01ikg"]
 [ext_resource type="PackedScene" uid="uid://dqcmy7t0tthna" path="res://scenes/o_cortico.tscn" id="17_3fj0p"]
 [ext_resource type="Script" path="res://script/Livro3.gd" id="18_kx12u"]
+[ext_resource type="PackedScene" uid="uid://ddtlftydyc5mh" path="res://scenes/gameover.tscn" id="21_1lhcg"]
+[ext_resource type="PackedScene" uid="uid://b5m344kr8u2um" path="res://scenes/goal.tscn" id="22_3ijv4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j27ko"]
 texture = ExtResource("1_odcxo")
@@ -1058,7 +1060,7 @@ position = Vector2(613.085, -23.8197)
 position = Vector2(630.245, -23.8197)
 
 [node name="Door" type="Sprite2D" parent="TileMap"]
-position = Vector2(3477, -81)
+position = Vector2(3477, -80)
 texture = ExtResource("6_sfhco")
 
 [node name="Palm" type="Sprite2D" parent="TileMap"]
@@ -1144,8 +1146,19 @@ stream = ExtResource("16_01ikg")
 autoplay = true
 max_distance = 30000.0
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+limit_left = 0
+limit_right = 3506
+editor_draw_limits = true
+
+[node name="GamerOver" parent="CharacterBody2D/Camera2D" instance=ExtResource("21_1lhcg")]
+position = Vector2(-4, 4)
+
 [node name="InfiniteScrollingBackground" parent="." instance=ExtResource("15_rrlpo")]
 speed = 5.0
+
+[node name="goal" parent="." instance=ExtResource("22_3ijv4")]
+position = Vector2(3487, -64)
 
 [connection signal="body_entered" from="macunaima" to="." method="_on_macunaima_body_entered"]
 [connection signal="body_entered" from="o_cortico" to="." method="_on_o_cortico_body_entered"]

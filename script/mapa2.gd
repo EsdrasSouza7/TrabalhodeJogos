@@ -53,7 +53,7 @@ func _on_macunaima_body_entered(_body):
 	if ColetaLivro == 0:
 		var player = get_node("CharacterBody2D")
 		var livro = get_node("macunaima")
-		overlay_scene_instance1.position = Vector2i(1640, -220)
+		overlay_scene_instance1.position = Vector2i(1650, -220)
 		show_overlay1()
 		player.Stop_Player()
 		livro.queue_free()
@@ -64,7 +64,7 @@ func _on_o_cortico_body_entered(_body):
 	if ColetaLivro == 0:
 		var player = get_node("CharacterBody2D")
 		var livro = get_node("o_cortico")
-		overlay_scene_instance2.position = Vector2i(2927, -225)
+		overlay_scene_instance2.position = Vector2i(2867, -225)
 		show_overlay2()
 		player.Stop_Player()
 		livro.queue_free()

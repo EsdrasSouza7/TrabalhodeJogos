@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bg1733bj2v347"]
+[gd_scene load_steps=19 format=3 uid="uid://bg1733bj2v347"]
 
 [ext_resource type="Script" path="res://script/mapa1.gd" id="1_d7wuw"]
 [ext_resource type="Texture2D" uid="uid://tooapmuqcfvo" path="res://assets/Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_nwjvm"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cqpxpx52g6lg7" path="res://scenes/spike.tscn" id="11_fixgw"]
 [ext_resource type="AudioStream" uid="uid://sijg1euuoimm" path="res://assets/Music by Ansimuz/happywalking.ogg" id="12_gp7mt"]
 [ext_resource type="PackedScene" uid="uid://b5m344kr8u2um" path="res://scenes/goal.tscn" id="12_iayce"]
+[ext_resource type="PackedScene" uid="uid://ddtlftydyc5mh" path="res://scenes/gameover.tscn" id="12_jycdx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_868dg"]
 texture = ExtResource("1_nwjvm")
@@ -574,6 +575,17 @@ position = Vector2(189, 112)
 position = Vector2(68, 7)
 stream = ExtResource("12_gp7mt")
 autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+limit_left = 0
+limit_top = -400
+limit_right = 2405
+limit_bottom = 500
+position_smoothing_enabled = true
+editor_draw_limits = true
+
+[node name="GamerOver" parent="player/Camera2D" instance=ExtResource("12_jycdx")]
+position = Vector2(-5, 3)
 
 [node name="dom_casmurro" parent="." instance=ExtResource("9_7y31f")]
 position = Vector2(890, 115)
