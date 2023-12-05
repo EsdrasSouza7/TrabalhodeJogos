@@ -569,7 +569,7 @@ position = Vector2(2181, 48)
 texture = ExtResource("9_yn3bk")
 
 [node name="player" parent="." instance=ExtResource("2_d35vk")]
-position = Vector2(189, 112)
+position = Vector2(154, 110)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="player"]
 position = Vector2(68, 7)

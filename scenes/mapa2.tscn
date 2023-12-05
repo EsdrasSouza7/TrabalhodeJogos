@@ -1137,28 +1137,29 @@ offset_right = -75.0
 offset_bottom = -85.0
 script = ExtResource("18_kx12u")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_dbakk")]
-position = Vector2(56, 112)
+[node name="player" parent="." instance=ExtResource("2_dbakk")]
+position = Vector2(39, 109)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="player"]
 position = Vector2(-56, -112)
 stream = ExtResource("16_01ikg")
 autoplay = true
 max_distance = 30000.0
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="player"]
 limit_left = 0
 limit_right = 3506
+position_smoothing_enabled = true
 editor_draw_limits = true
 
-[node name="GamerOver" parent="CharacterBody2D/Camera2D" instance=ExtResource("21_1lhcg")]
+[node name="GamerOver" parent="player/Camera2D" instance=ExtResource("21_1lhcg")]
 position = Vector2(-4, 4)
 
 [node name="InfiniteScrollingBackground" parent="." instance=ExtResource("15_rrlpo")]
 speed = 5.0
 
 [node name="goal" parent="." instance=ExtResource("22_3ijv4")]
-position = Vector2(3487, -64)
+position = Vector2(3488, -70)
 
 [connection signal="body_entered" from="macunaima" to="." method="_on_macunaima_body_entered"]
 [connection signal="body_entered" from="o_cortico" to="." method="_on_o_cortico_body_entered"]
