@@ -226,3 +226,30 @@ position = Vector2(322, 160)
 stream = ExtResource("5_eewdn")
 autoplay = true
 attenuation = 0.015625
+
+[node name="devs" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 32.0
+offset_right = 300.0
+offset_bottom = 196.0
+bbcode_enabled = true
+text = "[center][color=black]Desenvolvedores:[/color][/center][color=black]
+[ul]
+Luan Sales Barroso
+Esdras Souza dos Santos
+Cauã de Sousa Brandão
+Lucas Nascimento de Sousa
+[/ul][/color]"
+
+[node name="extras" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 61.0
+offset_right = 640.0
+offset_bottom = 131.0
+bbcode_enabled = true
+text = "[center][color=black]Assets e músicas: [url=https://ansimuz.itch.io/sunny-land-pixel-game-art]ansimuz[/url]
+Player: [url=https://free-game-assets.itch.io/free-tiny-hero-sprites-pixel-art]Free Game Assets[/url]
+Livros: [url=https://free-game-assets.itch.io/free-rpg-book-icons]Free Game Assets[/url]
+[/color][/center]"
