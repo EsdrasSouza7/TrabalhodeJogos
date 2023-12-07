@@ -1,8 +1,8 @@
 # Trabalho de Jogos Digitais
 
 ## Equipe:
-+ Cauã Brndão
-+ Esdras Sousa
++ Cauã Brandão
++ Esdras Souza
 + Luan Barroso
 
 ## Links
