@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4ut8jsc31pjq"]
+
+[ext_resource type="PackedScene" uid="uid://dvl6e7p6u8mxx" path="res://scenes/dom_casmurro.tscn" id="1_hnlh3"]
+
+[node name="livro_1" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 320.0
+
+[node name="ColorRect2" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 180.0
+offset_right = 626.0
+offset_bottom = 290.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 186.0
+offset_right = 622.0
+offset_bottom = 284.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 186.0
+offset_right = 620.0
+offset_bottom = 282.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[fill][font_size={11}]Bento Santiago, aos 60 anos, narra seu amor por Capitu no Rio de Janeiro do Segundo Império. Enviado ao seminário pela mãe, Dona Glória, ele promete casar-se com Capitu. Após reviravoltas e estudos em São Paulo, casa-se com ela. Suspeitas de traição surgem com a semelhança de seu filho, Ezequiel, com o amigo Escobar. Discussões levam Bentinho a tentar matar a criança. Eles se separam, Bentinho vai para a Europa, e Capitu morre no exterior. Após a morte da mãe, o filho tenta se aproximar do pai, que o rejeita. O filho morre em uma expedição, deixando Bentinho nostálgico ao construir uma casa na antiga rua.[/font_size][/fill]"
+
+[node name="dom_casmurro" parent="Control" instance=ExtResource("1_hnlh3")]
+position = Vector2(311, 106)
+scale = Vector2(5, 5)

@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqcmy7t0tthna"]
+
+[ext_resource type="Texture2D" uid="uid://cy0p6cpdjrc5j" path="res://assets/livros/42.png" id="1_qd2lc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lyup"]
+size = Vector2(450, 400)
+
+[sub_resource type="Animation" id="Animation_kwh1b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vnb64"]
+resource_name = "float"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wb0lq"]
+_data = {
+"RESET": SubResource("Animation_kwh1b"),
+"float": SubResource("Animation_vnb64")
+}
+
+[node name="o_cortico" type="Area2D"]
+
+[node name="livro" type="Sprite2D" parent="."]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_qd2lc")
+
+[node name="colision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.04, 0.04)
+shape = SubResource("RectangleShape2D_2lyup")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../livro")
+autoplay = "float"
+libraries = {
+"": SubResource("AnimationLibrary_wb0lq")
+}

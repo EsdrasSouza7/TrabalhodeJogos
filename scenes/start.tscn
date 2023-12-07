@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4fjisgwu6krf"]
+
+[ext_resource type="Script" path="res://script/start.gd" id="1_0f4hb"]
+[ext_resource type="PackedScene" uid="uid://bb7vie5q3qnvg" path="res://scenes/paralax_da_tela_inicial.tscn" id="2_csk30"]
+[ext_resource type="AudioStream" uid="uid://6gk5v7b3a1cf" path="res://assets/Music by Ansimuz/dark-happy-world.ogg" id="3_rcyuo"]
+
+[node name="start" type="Node2D"]
+script = ExtResource("1_0f4hb")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 246.0
+offset_top = 115.0
+offset_right = 396.0
+offset_bottom = 149.0
+text = "Começar o Jogo"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 246.0
+offset_top = 176.0
+offset_right = 396.0
+offset_bottom = 210.0
+text = "Creditos"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 247.0
+offset_top = 237.0
+offset_right = 397.0
+offset_bottom = 271.0
+text = "Sair do jogo"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 230.0
+offset_top = 25.0
+offset_right = 379.0
+offset_bottom = 74.0
+scale = Vector2(1.23944, 1.375)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+text = "Pitû: Salto Literário"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParalaxDaTelaInicial" parent="." instance=ExtResource("2_csk30")]
+speed = 80.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rcyuo")
+autoplay = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="Button3" to="." method="_on_button_3_button_down"]

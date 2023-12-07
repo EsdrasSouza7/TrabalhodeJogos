@@ -196,7 +196,7 @@ _data = {
 "walk": SubResource("Animation_g5rid")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(63, 31)
 script = ExtResource("1_ncxtj")
 
@@ -239,8 +239,3 @@ hframes = 4
 visible = false
 texture = ExtResource("6_0th2q")
 hframes = 8
-
-[node name="Camera2D" type="Camera2D" parent="."]
-process_callback = 0
-position_smoothing_enabled = true
-editor_draw_limits = true

@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://6ti63y503530"]
+
+[ext_resource type="PackedScene" uid="uid://dlpaxtht82ejy" path="res://scenes/macunaima.tscn" id="1_wigw5"]
+
+[node name="livro_2" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 320.0
+
+[node name="ColorRect2" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 180.0
+offset_right = 626.0
+offset_bottom = 290.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 186.0
+offset_right = 622.0
+offset_bottom = 284.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 186.0
+offset_right = 620.0
+offset_bottom = 282.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[fill][font_size={15}]Macunaíma é um famoso romance da primeira fase do modernismo brasileiro. Narra as aventuras de Macunaíma, herói sem nenhum caráter que sai da floresta amazônica e vai para São Paulo, onde enfrenta o gigante Piaimã. O vilão está de posse de uma muiraquitã, um amuleto que o herói recebeu de Ci, a Mãe do Mato.[/font_size][/fill]"
+
+[node name="macunaima" parent="Control" instance=ExtResource("1_wigw5")]
+position = Vector2(309, 102)
+scale = Vector2(5, 5)

@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://stqmfjrnh8l1"]
+
+[ext_resource type="PackedScene" uid="uid://dqcmy7t0tthna" path="res://scenes/o_cortico.tscn" id="1_2alld"]
+
+[node name="livro_3" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 320.0
+
+[node name="ColorRect2" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 180.0
+offset_right = 626.0
+offset_bottom = 290.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 186.0
+offset_right = 622.0
+offset_bottom = 284.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 186.0
+offset_right = 620.0
+offset_bottom = 282.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[fill][font_size={14}]O Cortiço é um romance do escritor brasileiro Aluísio de Azevedo. Foi publicado em 1890 e faz parte do movimento naturalista do Brasil. A obra retrata a vida das pessoas simples em um cortiço (habitação coletiva) do Rio de Janeiro. Com um teor crítico, trata-se de uma exímia representação da realidade brasileira do século XIX.[/font_size][/fill]"
+
+[node name="o_cortico" parent="Control" instance=ExtResource("1_2alld")]
+position = Vector2(313, 94)
+scale = Vector2(5, 5)

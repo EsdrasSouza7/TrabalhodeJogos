@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqpxpx52g6lg7"]
 
 [ext_resource type="Texture2D" uid="uid://bh74286q02qpq" path="res://assets/Sunny-land-files/Graphical Assets/environment/Props/spikes.png" id="1_1kq04"]
-[ext_resource type="Script" path="res://script/spike.gd" id="1_8f6hd"]
+[ext_resource type="Script" path="res://script/Thorn.gd" id="1_3retm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vay4x"]
 size = Vector2(16, 9)
 
 [node name="spike" type="Area2D"]
-script = ExtResource("1_8f6hd")
+script = ExtResource("1_3retm")
 
 [node name="Spikes" type="Sprite2D" parent="."]
 position = Vector2(0, 5)
@@ -16,3 +16,5 @@ texture = ExtResource("1_1kq04")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_vay4x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
